@@ -1,0 +1,340 @@
+@charset "utf-8";
+div::-webkit-scrollbar {
+  display: none; /* for Chrome, Safari, and Opera */
+}
+.primary_header {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 90px;
+    background-color: #393b40;
+    border-bottom: 5px solid #1F2125;
+    font-size: 24px;
+    font-family: "Bebas Neue";
+    overflow: auto;
+    float: left;
+}
+.primary_header img{
+	padding-left: 10px;
+	padding-right: 15px;
+	top:10px;
+}
+.primary_header h1{
+	height: 50px;
+}
+.primary_header .page_select_area{
+	position: relative;
+	display:flex;
+	flex-direction: row;
+	justify-content: flex-end;
+	width: 75%;
+	height: 100%;
+	overflow: hidden;
+	
+}
+.primary_header .page_select_area .page_select_box{
+	
+    position: relative;
+    width: 150px;
+    height: 100%;
+    background-color: #303134;
+    overflow: auto;
+    margin-left: 10px;
+	border-bottom: 400px solid #FFFFFF;
+	transform-origin: bottom;
+	transition: all 0.4s ease;
+	
+}
+.primary_header .page_select_area .page_select_box:hover{
+	transform: translateY(-6px);
+}
+.primary_header .page_select_area .page_select_box:active{
+	transform: translateY(-300px);
+}
+
+.console_box {
+	position: relative;
+	width: 60%;
+	background-color: #1F2125;
+	border-color: chartreuse;
+	border: thick;
+	height: 600px;
+	margin:auto
+
+}
+
+.specs_box_row {
+	position:relative;
+	top:175px;
+	display:flex;
+	flex-flow: row;
+	width:100%;
+	justify-content: center;
+	gap: 100px;
+}
+
+.specs_box_row .card{
+	display:grid;
+	grid-template-columns: 300px;
+	grid-template-rows: 210px 210px 80px;
+	grid-template-areas: "image" "text" "stats";
+	
+	
+	font-family: Poppins;
+	color: #ECF0F3;
+	border-radius: 18px;
+	background: #1F2125;
+	box-shadow: 5px 5px 15px rgba(0,0,0,0.9);
+	text-align: center;
+	
+	transition: 0.5s ease;
+	cursor: pointer;
+	
+	transform-style: preserve-3d;
+	perspective: 1000px;
+}
+
+.rgb::after{
+	content:"";
+	background: linear-gradient(45deg,
+	#ff0000 0%,
+	#ff9a00 10%,
+	#d0de21 20%,
+	#4fdc4a 30%,
+	#3fdad8 40%,
+	#2fc9e2 50%,
+	#1c7fee 60%,
+	#5f15f2 70%,
+	#ba0cf8 80%,
+	#fb07d9 90%,
+	#ff0000 100%)
+	repeat 0% 0% / 300% 100%;
+	position: absolute;
+	inset: -3px;
+	border-radius: 16px;
+	filter: blur(8px);
+	transform: translateZ(-1px);
+	animation: rgb 6s linear infinite;
+}
+
+@keyframes rgb{
+	0% {background-position: 0% 50%;}
+	50% {background-position: 100% 50%;}
+	100% {background-position: 0% 50%;}
+}
+
+
+
+.specs_box_row .card .card-image{
+	grid-area: image;
+	background: url("Assets/ComputerSetupImage.jpg");
+	border-top-left-radius: 15px;
+	border-top-right-radius: 15px;
+	background-size: cover;
+	
+	
+}
+.specs_box_row .card .card-text{
+	grid-area: text;
+	margin-left: 10px;
+	margin-right: 10px;
+	transform:translateZ(15px);
+}
+.specs_box_row .card .card-text .date{
+	color:#01fe87;
+	font-size: 13px;
+}
+.specs_box_row .card .card-text p{
+	font-size:12px;
+	color:#b6b8b7;
+}
+.specs_box_row .card .card-text h2{
+	color:#ECF0F3;
+	margin-top:0px;
+	font-size:28px;
+	text-decoration: underline;
+}
+
+.specs_box_row .card .card-stats{
+	grid-area: stats;
+	display:grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-template-rows: 1fr;
+	border-bottom-left-radius: 15px;
+	border-bottom-right-radius: 15px;
+	background: #26272b;
+	
+}
+
+.specs_box_row .card .card-stats .stat{
+	display:flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	padding: 10px;
+	color: #ECF0F3;
+}
+
+.specs_box_row .card .card-stats .type{
+	font-size: 11px;
+	font-weight: 300;
+	text-transform: uppercase;
+}
+
+.specs_box_row .card .card-stats .value{
+	font-size: 22px;
+	font-weight: 500;
+}
+.specs_box_row .card .card-stats .value sup{
+	font-size: 12px;
+}
+
+.specs_box_row .card .card-stats .border{
+	border-left: 1px solid #6a6d75;
+	border-right: 1px solid #6a6d75;
+}
+
+
+.specs_box_row .card:hover{
+	transform:scale(1.2);
+	box-shadow: 5px 5px 15px rgba(0,0,0,0.6);
+}
+
+.js-tilt-glare {
+	border-radius: 18px;
+}
+/*
+.Home_Text_Box h2{
+	position: absolute;
+	left:150px;
+	font-size: 10vw;
+	font-family:"Poppins Black";
+	color: #303134;
+	-webkit-text-stroke: 0.3vw #393b40;
+	text-transform: uppercase;
+	
+}
+
+.Home_Text_Box h2::before{
+	content: attr(data-text);
+	position: absolute;
+	top:0;
+	left:0;
+	width:0%;
+	height:100%;
+	color: #01fe87;
+	-webkit-text-stroke: 0vw #393b40;
+	border-right: 2px solid #01fe87;
+	overflow: hidden;
+	animation: Hello_World_Animation 6s linear infinite;
+	
+}
+@keyframes Hello_World_Animation
+{
+	0%,10%,100%
+	{
+		width: 0;
+	}
+	70%,90%
+	{
+		width:100%;
+	}
+}
+
+*/
+
+
+
+
+
+.Home_Text_Box2 {
+	width: 100%;
+	text-align: center;
+	background-color: transparent;
+	position: absolute;
+	color:#01fe87;
+	font-size: 100px;
+	font-family: Poppins;
+	margin-top: 225px;
+    text-shadow: 2px 4px 4px #00592f;
+}
+
+
+
+
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+.wrapper .button{
+  display: inline-block;
+  height: 60px;
+  width: 60px;
+  float: left;
+  margin: 0 5px;
+  overflow: hidden;
+  background: #fff;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0px 10px 10px rgba(0,0,0,0.1);
+  transition: all 0.3s ease-out;
+}
+.wrapper .button:hover{
+  width: 200px;
+}
+.wrapper .button .icon{
+  display: inline-block;
+  height: 60px;
+  width: 60px;
+  text-align: center;
+  border-radius: 50px;
+  box-sizing: border-box;
+  line-height: 60px;
+  transition: all 0.3s ease-out;
+}
+.wrapper .button:nth-child(1):hover .icon{
+  background: #1DA1F2;
+}
+.wrapper .button:nth-child(2):hover .icon{
+  background: #E1306C;
+}
+.wrapper .button:nth-child(3):hover .icon{
+  background: #333;
+}
+.wrapper .button:nth-child(4):hover .icon{
+  background: #ff0000;
+}
+.wrapper .button .icon i{
+  font-size: 25px;
+  line-height: 60px;
+  transition: all 0.3s ease-out;
+}
+.wrapper .button:hover .icon i{
+  color: #fff;
+}
+.wrapper .button span{
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 60px;
+  margin-left: 10px;
+  transition: all 0.3s ease-out;
+}
+
+.wrapper .button:nth-child(1) span{
+  color: #1DA1F2;
+}
+.wrapper .button:nth-child(2) span{
+  color: #E1306C;
+}
+.wrapper .button:nth-child(3) span{
+  color: #333;
+}
+.wrapper .button:nth-child(4) span{
+  color: #ff0000;
+}
+
+
+
+body{
+	margin: 0px;
+}
+h1{
+	margin: 0px;
+}
