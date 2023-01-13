@@ -37,6 +37,7 @@ consoleInput.addEventListener("keyup", e => {
 		if(codeLower ==="help"){
 			addResult(code,"help - Lists all valid commands")
 			addResultOutput("aboutme - Prints the about me paragraph")
+			addResultOutput("red <page> - Redirects you to a given page e.g. Red Home would take to the home page, Red https://www.google.co.uk/ - would take you to the google webpage")
 			addResultOutput("<JavaScript code> - You can run any JavaScript Code in this console, try 1+1")
 		}
 		if(codeLower === "aboutme"){
