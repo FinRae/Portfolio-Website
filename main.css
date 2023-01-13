@@ -52,16 +52,70 @@ div::-webkit-scrollbar {
 	transform: translateY(-300px);
 }
 
-.console_box {
-	position: relative;
-	width: 60%;
-	background-color: #1F2125;
-	border-color: chartreuse;
-	border: thick;
-	height: 600px;
-	margin:auto
-
+.console * {
+	font-family: Poppins;
 }
+
+.console {
+	width: 80vw;
+	height: 70vh;
+	display: flex;
+	flex-direction: column;
+	background: #1F2125;
+	
+}
+
+.console_history {
+	flex-grow: 1;
+	box-sizing:border-box;
+	padding: 24px;
+	overflow-y: auto;
+}
+
+.console_input_log,
+.console_output_log{
+	box-sizing: border-box;
+	padding: 6px 12px;
+}
+
+.console_input_log:hover,
+.console_output_log:hover{
+	background: rgba(255,255,255,0.03);
+}
+
+.console_input_log{
+	color: #FFFFFF;
+	font-weight:bold;
+}
+
+.console_output_log{
+	color: #01fe87;
+}
+
+.console_input{
+	background: rgba(255,255,255,0.06);
+	flex-shrink: 0;
+	box-sizing: border-box;
+	outline:none;
+	padding:12px;
+	border: none;
+	border-top: 1px solid #ECF0F3;
+	color: #FFFFFF;
+	transition: background 0.2s;
+}
+
+.console_input:hover,
+.console_input:focus {
+	background: rgba(255,255,255,0.1);
+}
+
+
+
+
+
+
+
+
 
 .specs_box_row {
 	position:relative;
