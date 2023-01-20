@@ -24,7 +24,6 @@ function addResultOutput(output) {
 	
 	historyContainer.append(outputLogElement)
 }
-
 function redirectDelay(page){
 	location.href = page;
 }
@@ -40,10 +39,11 @@ consoleInput.addEventListener("keyup", e => {
 			addResultOutput("aboutme - Prints the about me paragraph")
 			addResultOutput("red <page> - Redirects you to a given page e.g. Red Home would take to the home page, Red https://www.google.co.uk/ - would take you to the google webpage")
 			addResultOutput("<JavaScript code> - You can run any JavaScript Code in this console, try 1+1")
+			addResultOutput("cls / clear - Clears the console")
 			doJs = false;
 		}
 		if(codeLower === "aboutme"){
-				addResult(code,"Hey there, my name is Finlay Rae and I'm 17 years old. Im studying Mathematics, Computer Science and Physics at A level but particularly enjoy Computer Science. I code as a passion but also love to play video games, namely valorant. When I choose to code something its usually in python or C# however I know C#, Python, Lua, HTML, CSS and JS. My main interest in computer science is the field of Cyber Security, which i plan to study at university in 2023. If you wish to contact me, please do so in the contact me section of the page.");
+				addResult(code,"Hey there, my name is Finlay Rae and I'm 17 years old. Im studying Mathematics, Computer Science and Physics at A level but particularly enjoy Computer Science. I code as a passion but also love to play video games, namely valorant. When I choose to code something its usually in python or C# however I know C#, Python, Lua, HTML, CSS and JS. My main interest in computer science is the field of Cyber Security, which I plan to study at university in 2023. If you wish to contact me, please do so in the contact me section of the page.");
 			doJs = false;
 		}
 		
@@ -69,6 +69,10 @@ consoleInput.addEventListener("keyup", e => {
 				setTimeout(redirectDelay,3000,codeLower.split(" ")[1]);
 			}
 			doJs = false
+		}
+		if(codeLower === "cls" || codeLower === "clear") {
+			location.href = "AboutMe.html";
+			doJs = false;
 		}
 
 		if(doJs===true){
